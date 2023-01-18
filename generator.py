@@ -9,7 +9,10 @@ NOTES_PATH = "./notes/"
 a = """<!DOCTYPE html>
 <html>
 <head>
-    <style>* {background-color: "#420420"; color: "#696969";}</style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <style>* {background-color: "#420420"; color: "#696969"; font-family: "Montserrat";}</style>
 </head>
 <body>"""
 
