@@ -14,12 +14,15 @@ a = """<!DOCTYPE html>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
     <style>
         body {
-        background-color: #242420; 
-        color: #696969; 
+        background-color: #4564b9; 
+        color: white; 
         font-family: "Montserrat";
         margin-left: 30px;
         margin-right: 50px;
         margin-top: 3px;
+        }
+        chrzanic_notki {
+            border-bottom: 2px solid white;
         }
     </style>
 </head>
@@ -31,10 +34,11 @@ z = """</body>
 
 def compile_post(path):
     with open(path, 'r') as file:
-        return "<div>" + "".join(markdown.markdown(file.read())) + "</div>"
+        return """<div class="chrzanic_notki">""" + "".join(markdown.markdown(file.read())) + "</div>"
 
 content_is_said_too_much = ""
 posty = os.listdir(NOTES_PATH)
+posty.sort()
 posty.reverse()
 print(posty)
 for note in posty:
