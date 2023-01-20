@@ -1,3 +1,4 @@
+# pylint: disable=invalid-name
 #!/usr/local/python/3.10.4/bin/python
 import os
 import markdown
@@ -21,20 +22,21 @@ a = """<!DOCTYPE html>
         margin-right: 50px;
         margin-top: 3px;
         }
-        chrzanic_notki {
-            border-bottom: 2px solid white;
+        .chrzanic_notki {
+            border-bottom: 1px dashed white;
         }
     </style>
 </head>
 <body>
-    <h1>bunt maszyn w końcu nadejdzie</h1>"""
+    <h1>bunt maszyn w końcu nadejdzie</h1>
+"""
 
 z = """</body>
 </html>"""
 
 def compile_post(path):
-    with open(path, 'r') as file:
-        return """<div class="chrzanic_notki">""" + "".join(markdown.markdown(file.read())) + "</div>"
+    with open(path, 'r', encoding='utf-8') as file:
+        return """\t<div class="chrzanic_notki">""" + "".join(markdown.markdown(file.read()).split("\n")) + "</div>\n"
 
 content_is_said_too_much = ""
 posty = os.listdir(NOTES_PATH)
@@ -44,7 +46,7 @@ print(posty)
 for note in posty:
     content_is_said_too_much += compile_post(NOTES_PATH+note)
 
-with open ("index.html", "w") as page:
+with open ("index.html", "w", encoding='utf-8') as page:
     page.write(a + content_is_said_too_much + z)
 
 print ("gerenrantor is ending")
