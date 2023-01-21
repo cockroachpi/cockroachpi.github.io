@@ -1,7 +1,9 @@
-# pylint: disable=invalid-name
 #!/usr/local/python/3.10.4/bin/python
 import os
+import re
+import pytz
 import markdown
+import datetime
 
 print ("generator iis strarting")
 
@@ -25,6 +27,9 @@ a = """<!DOCTYPE html>
         .chrzanic_notki {
             border-bottom: 1px dashed white;
         }
+        h3 {
+            font-size: 15px;
+        }
     </style>
 </head>
 <body>
@@ -34,8 +39,17 @@ a = """<!DOCTYPE html>
 z = """</body>
 </html>"""
 
+def warsaw_time():
+    date = datetime.datetime.now(pytz.timezone('Europe/Warsaw'))
+    return f"{str(date.day).zfill(2)}.{str(date.month).zfill(2)}.{date.year}\n"
+
 def compile_post(path):
-    with open(path, 'r', encoding='utf-8') as file:
+    with open(path, 'r+', encoding='utf-8') as file:
+        #if(re.search(r'\d{2}\.\d{2}\.\d{4}', file.read())):
+        #    text = file.read()
+        #    file.seek(0,0)
+        #    file.write(warsaw_time())
+        #    file.write(text)
         return """\t<div class="chrzanic_notki">""" + "".join(markdown.markdown(file.read()).split("\n")) + "</div>\n"
 
 content_is_said_too_much = ""
