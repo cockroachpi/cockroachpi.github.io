@@ -17,7 +17,7 @@ a = """<!DOCTYPE html>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
     <style>
         body {
-        background-color: #4564b9; 
+        background-color: red;/*#4564b9;*/ 
         color: white; 
         font-family: "Montserrat";
         margin-left: 30px;
@@ -54,7 +54,7 @@ def compile_post(path):
 
 content_is_said_too_much = ""
 posty = os.listdir(NOTES_PATH)
-posty.sort()
+posty.sort(key = lambda x: int(x[:-3]))
 posty.reverse()
 print(posty)
 for note in posty:
