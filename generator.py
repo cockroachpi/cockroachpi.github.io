@@ -33,7 +33,7 @@ a = """<!DOCTYPE html>
     </style>
 </head>
 <body>
-    <h1>bunt maszyn w końcu nadejdzie</h1>
+    <h1>a teraz będę słuchał</h1>
 """
 
 z = """</body>
