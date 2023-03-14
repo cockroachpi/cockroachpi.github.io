@@ -17,15 +17,19 @@ a = """<!DOCTYPE html>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
     <style>
         body {
-        background-color: black;/*#4564b9;*/ 
+        background: rgb(58,56,88);
+        background: linear-gradient(139deg, rgba(58,56,88,1) 0%, rgba(17,69,58,1) 24%, rgba(255,149,0,1) 100%); ;/*#4564b9;*/ 
         color: white; 
         font-family: "Montserrat";
         margin-left: 30px;
         margin-right: 50px;
         margin-top: 3px;
+        overflow-wrap: break-word;
+        text-align: justify;
         }
         .chrzanic_notki {
             border-bottom: 1px dashed white;
+            width: 60%;
         }
         h3 {
             font-size: 15px;
